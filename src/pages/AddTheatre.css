@@ -1,0 +1,83 @@
+/* ===============================
+   🎭 AddTheatre.css
+   Dark Netflix-style form design
+================================*/
+
+.add-theatre-container {
+  background: linear-gradient(135deg, #0f0f0f, #181818);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.add-theatre-form {
+  background: #121212;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  width: 100%;
+  max-width: 450px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.add-theatre-form:hover {
+  box-shadow: 0 12px 30px rgba(229, 9, 20, 0.2);
+}
+
+.add-theatre-header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #e50914;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.add-theatre-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  background: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.add-theatre-form input:focus {
+  border-color: #e50914;
+  outline: none;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+}
+
+.add-theatre-form button {
+  width: 100%;
+  padding: 14px;
+  background: #e50914;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-theatre-form button:hover {
+  background: #f40612;
+  transform: scale(1.03);
+}
+
+.add-theatre-form button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 500px) {
+  .add-theatre-form {
+    padding: 30px 20px;
+  }
+}

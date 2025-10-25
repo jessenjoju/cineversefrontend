@@ -1,0 +1,162 @@
+/* 🎬 Netflix-Style Theatre Approval Dashboard */
+body {
+  background-color: #141414; /* Deep Netflix black */
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🎭 Main Container */
+.theatre-approval-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 40px;
+  background: rgba(20, 20, 20, 0.9);
+  border: 2px solid rgba(229, 9, 20, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🏷️ Heading */
+.theatre-approval-container h2 {
+  text-align: center;
+  color: #e50914; /* Netflix Red */
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* 📋 Table */
+.theatre-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #181818;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.1);
+}
+
+/* 🧾 Table Header */
+.theatre-table th {
+  background: linear-gradient(90deg, #e50914, #b0060d);
+  color: #fff;
+  font-weight: 700;
+  padding: 16px;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* 📄 Table Rows */
+.theatre-table td {
+  padding: 14px 16px;
+  color: #e5e5e5;
+  border-bottom: 1px solid #222;
+  font-size: 0.95rem;
+}
+
+/* 🟢 Alternate Row Background */
+.theatre-table tr:nth-child(even) {
+  background-color: #1f1f1f;
+}
+
+/* ✨ Hover Effect */
+.theatre-table tr:hover {
+  background-color: #2a2a2a;
+  transition: background-color 0.3s ease;
+}
+
+/* 🧠 Action Buttons Layout */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+/* ✅ Approve Button */
+.approve-btn {
+  background: linear-gradient(90deg, #46d369, #1db954);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.approve-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(70, 211, 105, 0.6);
+}
+
+/* ❌ Reject Button */
+.reject-btn {
+  background: linear-gradient(90deg, #e50914, #b0060d);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.reject-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.6);
+}
+
+/* 🔄 Loading & Empty Messages */
+.loading-text,
+.no-theatres-message {
+  text-align: center;
+  margin-top: 30px;
+  color: #ccc;
+  font-size: 1rem;
+  background: rgba(24, 24, 24, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(229, 9, 20, 0.3);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .theatre-table thead {
+    display: none;
+  }
+
+  .theatre-table tr {
+    display: block;
+    background: #1a1a1a;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.1);
+  }
+
+  .theatre-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border: none;
+    border-bottom: 1px solid #333;
+  }
+
+  .theatre-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #e50914;
+  }
+
+  .action-buttons {
+    justify-content: center;
+  }
+}

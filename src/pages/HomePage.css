@@ -1,0 +1,264 @@
+/* General Setup */
+.homepage-container {
+  /* FIX: Added width: 100vw and adjusted position for robust full-screen cover */
+  width: 100vw;
+  min-height: 100vh;
+  /* Ensure the background image covers the whole area */
+  background-size: cover;
+  background-position: center; /* Changed from 'top center' for better image placement */
+  background-repeat: no-repeat;
+  color: white; 
+  /* Using a font similar to those used in modern movie sites */
+  font-family: 'Helvetica Neue', Arial, sans-serif; 
+}
+
+/* Overlay for Darkening and Gradient */
+.hero-overlay {
+  /* FIX: Ensure overlay also covers the full viewport */
+  min-height: 100vh;
+  width: 100%;
+  /* Creates the crucial dark overlay and the bottom-up purple/blue glow */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%, /* Lightly dark at the top */
+    rgba(0, 0, 0, 0.4) 40%, 
+    rgba(0, 0, 0, 0.8) 70%, 
+    /* Deep purplish-blue color at the bottom to match the poster's mood */
+    rgb(20, 0, 50) 100% 
+  );
+  padding: 0 5%; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: 800;
+    color: #FFC300; /* Yellow/Gold color */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px; /* Space between links */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
+}
+
+/* Subtle under-line or color change on hover */
+.nav-links li a:hover {
+  color: #ff9900; 
+}
+
+.user-icon {
+    /* Styles the user icon to be a distinct circle */
+    background: #FFC300;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: #111; /* Dark icon inside yellow circle */
+}
+
+/* --- Hero Content (Movie Details) --- */
+.hero-content {
+  /* Pushes content to the bottom and right of the page */
+  margin-top: auto; 
+  margin-left: auto; 
+  width: 45%; /* Content takes up slightly less than half the width */
+  padding-bottom: 80px;
+}
+
+.movie-title {
+  font-size: 4.5em; /* Large, imposing title */
+  font-weight: 900;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+/* Genre Tags */
+.genre-tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  background-color: rgba(100, 50, 200, 0.6); /* Semi-transparent purple */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.metadata {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.movie-description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 40px;
+  max-width: 500px; /* Limits the description width */
+}
+
+/* --- CTA Section (Rating and Buttons) --- */
+.cta-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 55px; /* Space for the heart icon */
+}
+
+/* The actual heart icon styling */
+.rating-container::before {
+    content: '♥'; /* Unicode for black heart (CSS will color it) */
+    position: absolute;
+    left: 0;
+    top: 5px;
+    font-size: 3em;
+    color: #E50914; /* Striking Red color */
+    line-height: 1;
+}
+
+.rating {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #E50914; /* Red color for percentage */
+  line-height: 1;
+}
+
+.want-to-see {
+    font-size: 0.9em;
+    color: #ddd;
+    margin-top: 15px; /* Align text under the percentage */
+}
+
+.action-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 15px 35px;
+  border: none;
+  border-radius: 30px; 
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease-in-out;
+  color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.trailer-btn {
+  /* Bright button for the primary action */
+  background-color: #E50914; 
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.5);
+}
+
+.tickets-btn {
+  /* Darker, secondary button */
+  background-color: #551a8b; 
+  box-shadow: 0 4px 15px rgba(85, 26, 139, 0.5);
+}
+
+/* ---------------------------------- */
+/* --- TRAILER MODAL / POPUP STYLES --- */
+/* ---------------------------------- */
+/* NOTE: These styles are added to your existing CSS */
+
+.trailer-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95); /* Very dark overlay */
+    z-index: 1000; /* Must be high to appear over all other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trailer-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    height: 0;
+    /* This padding-bottom trick makes the height responsive for a 16:9 video */
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9/16 = 0.5625) */
+    background: black;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+/* Iframe must be positioned absolutely to fill its content container */
+.trailer-modal-content iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Close Button (X) */
+.close-trailer-btn {
+    position: absolute;
+    top: -45px; /* Position it outside/above the video box */
+    right: 0;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.close-trailer-btn:hover {
+    color: #FFC300; /* Gold/Yellow on hover */
+}

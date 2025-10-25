@@ -1,0 +1,226 @@
+/* ==========================
+   NETFLIX-STYLE ADMIN PANEL
+   ========================== */
+
+/* General Layout */
+.admin-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, #0b0b0b 0%, #141414 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ==========================
+   SIDEBAR
+   ========================== */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #111 0%, #181818 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 25px 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 3px 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.sidebar-logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sidebar-logo h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #e50914; /* Netflix red accent */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidebar-menu li {
+  padding: 14px 28px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #b3b3b3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.sidebar-menu li:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.sidebar-menu li.active {
+  background: rgba(229, 9, 20, 0.15);
+  color: #fff;
+  border-left: 4px solid #e50914;
+  font-weight: 600;
+}
+
+.sidebar-menu li svg {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-menu li:hover svg {
+  color: #e50914;
+  transform: scale(1.1);
+}
+
+/* Logout Button */
+.sidebar-menu .logout {
+  margin-top: auto;
+  text-align: center;
+  background: #c6050f;
+  color: #fff;
+  font-weight: 600;
+  padding: 14px 25px;
+  border-radius: 6px;
+  margin: 20px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar-menu .logout:hover {
+  background: #f40612;
+  transform: translateY(-2px);
+}
+
+/* ==========================
+   SIDEBAR SCROLLBAR
+   ========================== */
+.sidebar-menu::-webkit-scrollbar {
+  width: 6px; /* thin scrollbar */
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c40610, #b00610);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(229, 9, 20, 0.7);
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff0f1f, #c20712);
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.9);
+}
+
+.sidebar-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Remove arrow buttons */
+.sidebar-menu::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* ==========================
+   MAIN CONTENT
+   ========================== */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at bottom right, #0f0f0f 0%, #1a1a1a 100%);
+  padding: 40px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+/* Topbar (Optional) */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(32, 32, 32, 0.95);
+  padding: 20px 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.topbar h1 {
+  font-size: 22px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.topbar span {
+  font-size: 16px;
+  color: #b3b3b3;
+}
+
+/* Content Section */
+.content-section {
+  background: rgba(25, 25, 25, 0.95);
+  border-radius: 16px;
+  padding: 35px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Main Scrollbar */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: #95030b;
+  border-radius: 4px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Smooth transitions */
+.sidebar-menu li,
+.logout,
+.content-section {
+  transition: all 0.3s ease;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+   ========================== */
+@media (max-width: 900px) {
+  .admin-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+
+  .sidebar-menu li {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}

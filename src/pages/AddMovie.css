@@ -1,0 +1,237 @@
+/* ============================
+   🎬 ADD MOVIE - NETFLIX STYLE
+   ============================ */
+
+.add-movie-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 40px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, #141414, #0b0b0b);
+  border-radius: 20px;
+  color: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-movie-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
+}
+
+/* Header */
+.add-movie-header {
+  text-align: center;
+  color: #e50914;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px rgba(229, 9, 20, 0.6);
+}
+
+/* --- Form Layout --- */
+.movie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- Labels --- */
+.movie-form label {
+  font-weight: 600;
+  color: #e5e5e5;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* --- Inputs, Textareas, Selects --- */
+.movie-form input,
+.movie-form select,
+.movie-form textarea {
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #1f1f1f;
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.movie-form input:focus,
+.movie-form select:focus,
+.movie-form textarea:focus {
+  border-color: #e50914;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+}
+
+/* --- Textarea --- */
+.movie-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* --- Multi-select (Genres) --- */
+.movie-form select[multiple] {
+  height: 120px;
+  overflow-y: auto;
+}
+
+/* --- Poster Preview --- */
+.poster-preview {
+  display: block;
+  margin-top: 10px;
+  border-radius: 10px;
+  width: 140px;
+  height: auto;
+  box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.poster-preview:hover {
+  transform: scale(1.05);
+}
+
+/* ============================
+   🎭 ACTORS SECTION
+   ============================ */
+
+.actors-section {
+  border: 1px solid #222;
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.actors-section h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Add (+) Actor Button */
+.add-actor-btn {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+.add-actor-btn:hover {
+  background: #f40612;
+  transform: scale(1.1);
+}
+
+/* Each Actor Row */
+.actor-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  background: rgba(18, 18, 18, 0.9);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.actor-item input[type="text"] {
+  flex: 1;
+  background: #1c1c1c;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+/* Actor Image Preview */
+.actor-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 10px rgba(229, 9, 20, 0.3);
+}
+
+/* Remove (❌) Actor Button */
+.remove-actor-btn {
+  background: #b81d24;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.remove-actor-btn:hover {
+  background: #e50914;
+  transform: scale(1.1);
+}
+
+/* ============================
+   ✅ SUBMIT BUTTON & TOGGLE
+   ============================ */
+
+.movie-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+.submit-btn {
+  padding: 14px;
+  background-color: #e50914;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+.submit-btn:hover {
+  background-color: #f40612;
+  transform: translateY(-3px);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* ============================
+   📱 RESPONSIVE DESIGN
+   ============================ */
+@media (max-width: 700px) {
+  .add-movie-container {
+    padding: 25px;
+    margin: 20px;
+  }
+
+  .actor-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .add-movie-header {
+    font-size: 1.6rem;
+  }
+}

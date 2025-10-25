@@ -1,0 +1,280 @@
+/* General Body and Background Styles */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.login-page-background {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* To stack logo and form */
+  align-items: center;
+  justify-content: center; /* Center form vertically and horizontally */
+  background-image: url('backgroundadd.jpg'); /* Your background image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1; /* Ensure this is above other elements for overlay */
+}
+
+.login-page-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 2; /* Ensure overlay is above background but below content */
+}
+
+/* Netflix Logo */
+.netflix-logo {
+  position: absolute;
+  top: 20px; /* Adjust as needed */
+  left: 3%; /* Adjust as needed */
+  z-index: 4; /* Ensure logo is on top */
+}
+
+.netflix-logo img {
+  width: 120px; /* Adjust logo size */
+  height: auto;
+}
+
+/* Login Form Container */
+.login-form-container {
+  background-color: rgba(0, 0, 0, 0.75); /* Darker, semi-transparent background for the form */
+  border-radius: 4px;
+  padding: 60px 68px 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 3; /* Ensure form is on top of the overlay */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-heading {
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 28px;
+  text-align: left; /* Aligns heading to the left */
+}
+
+.error-message {
+  color: #e87c03; /* Netflix's error orange */
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Form Styling */
+.login-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px; /* Space before links */
+}
+
+.login-input {
+  background-color: #333;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  padding: 16px 20px 0;
+  font-size: 16px;
+  outline: none;
+}
+
+.login-input::placeholder {
+  color: #8c8c8c;
+}
+
+.login-input:focus {
+  background-color: #444; /* Slightly lighter on focus */
+}
+
+.login-submit-btn {
+  background-color: #e50914; /* Netflix red */
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: background-color 0.2s;
+}
+
+.login-submit-btn:hover {
+  background-color: #f40612; /* Slightly brighter red on hover */
+}
+
+.login-submit-btn:disabled {
+  background-color: #4a4a4a;
+  cursor: not-allowed;
+}
+
+/* Form Options (Remember me and Need help) */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #b3b3b3;
+  margin-top: 10px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  background-color: #737373;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  top: 1px;
+}
+
+.remember-me input[type="checkbox"]:checked {
+  background-color: #737373; /* Still dark grey when checked, similar to Netflix */
+}
+
+.remember-me input[type="checkbox"]:checked::after {
+  content: '✓'; /* Unicode checkmark */
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+}
+
+
+.remember-me label {
+  cursor: pointer;
+}
+
+.need-help-link {
+  color: #b3b3b3;
+  text-decoration: none;
+}
+
+.need-help-link:hover {
+  text-decoration: underline;
+}
+
+/* Sign up and ReCAPTCHA Info */
+.signup-link,
+.recaptcha-info {
+  font-size: 16px;
+  color: #8c8c8c;
+  margin-top: 20px;
+}
+
+.signup-link p,
+.recaptcha-info p {
+  margin: 0;
+}
+
+.signup-link a,
+.recaptcha-info a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.signup-link a:hover,
+.recaptcha-info a:hover {
+  text-decoration: underline;
+}
+
+.recaptcha-info {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* Responsive adjustments (optional, but good practice) */
+@media (max-width: 768px) {
+  .login-form-container {
+    padding: 40px 30px;
+    margin: 20px;
+  }
+  .netflix-logo {
+    top: 10px;
+    left: 20px;
+  }
+  .netflix-logo img {
+    width: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form-container {
+    background-color: transparent; /* No background on very small screens */
+    padding: 20px;
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .login-page-background {
+    justify-content: flex-start; /* Push content to top on mobile */
+  }
+  .login-page-background::before {
+    background: rgba(0, 0, 0, 0.85); /* Slightly darker overlay for better contrast on mobile */
+  }
+  .netflix-logo {
+    position: relative; /* Adjust logo positioning */
+    top: auto;
+    left: auto;
+    align-self: flex-start;
+    margin: 20px 0 0 20px;
+  }
+  .google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(90deg, #ffffff, #f8f9fa);
+  color: #444;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #ddd;
+  border-radius: 50px; /* Rounded pill shape */
+  padding: 12px 24px;
+  margin-top: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.google-btn:hover {
+  background: #fff;
+  transform: translateY(-2px); /* subtle lift on hover */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.google-btn:active {
+  transform: scale(0.97); /* slight press effect */
+}
+
+.google-btn svg {
+  font-size: 22px; /* Bigger Google icon */
+}
+}

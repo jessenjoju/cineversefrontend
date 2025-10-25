@@ -1,0 +1,97 @@
+.user-page {
+  padding: 20px;
+  color: #222;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.screen-list, .show-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.screen-list button, .show-list button {
+  background: #eee;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.screen-list button.active, .show-list button.active {
+  background: #4caf50;
+  color: white;
+}
+
+.seat-grid {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.seat-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.seat {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.seat.selected {
+  background: #4caf50;
+  color: white;
+}
+
+.seat.booked {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.booking-summary {
+  margin-top: 20px;
+}
+
+.book-btn {
+  background: #ff5733;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

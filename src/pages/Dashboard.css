@@ -1,0 +1,151 @@
+/* ==============================
+   🎬 NETFLIX-STYLE ADMIN DASHBOARD (HORIZONTAL)
+   ============================== */
+
+.dashboard-container {
+  color: #fff;
+  padding: 30px 40px;
+  min-height: 100%;
+  background: radial-gradient(circle at bottom right, #0f0f0f 0%, #1a1a1a 100%);
+  border-radius: 16px;
+  animation: fadeIn 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #e50914;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 0 12px rgba(229, 9, 20, 0.6);
+}
+
+/* ==============================
+   Horizontal Flex Layout
+   ============================== */
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+/* ==============================
+   Card Styling
+   ============================== */
+.stat-card {
+  background: linear-gradient(145deg, #141414, #0a0a0a);
+  border: 1px solid rgba(229, 9, 20, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 18px;
+  padding: 30px 20px;
+  flex: 1; /* makes cards auto-fit width */
+  min-width: 220px;
+  max-width: 280px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.1) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(229, 9, 20, 0.4);
+}
+
+/* ==============================
+   Icons
+   ============================== */
+.stat-card svg {
+  margin-bottom: 10px;
+  color: #e50914;
+  filter: drop-shadow(0 0 8px rgba(229, 9, 20, 0.6));
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.stat-card:hover svg {
+  transform: scale(1.2);
+  color: #ff1e27;
+}
+
+/* ==============================
+   Text Styling
+   ============================== */
+.stat-card h3 {
+  font-size: 34px;
+  font-weight: 800;
+  margin: 8px 0;
+  background: linear-gradient(90deg, #ff3333, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-card p {
+  font-size: 15px;
+  color: #b3b3b3;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ==============================
+   Glow Animation
+   ============================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==============================
+   Responsive Design
+   ============================== */
+@media (max-width: 1200px) {
+  .stats-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px;
+  }
+
+  .dashboard-title {
+    font-size: 22px;
+  }
+
+  .stat-card {
+    min-width: 160px;
+    max-width: 200px;
+    padding: 20px 10px;
+  }
+
+  .stat-card h3 {
+    font-size: 26px;
+  }
+}

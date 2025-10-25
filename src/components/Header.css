@@ -1,0 +1,78 @@
+/* --- Global Header Styles --- */
+.main-header {
+  background-color: transparent; /* Remains transparent as requested */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5%; /* Increased padding for a more spacious, modern look */
+  width: 100%;
+  box-sizing: border-box; /* Include padding in the element's total width/height */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  position: absolute; /* Changed to absolute to float over the hero content */
+  top: 0;
+  left: 0;
+  z-index: 200; /* Ensure it stays above the hero overlay */
+}
+
+/* --- Left Section (Logo) --- */
+.header-left {
+  /* No changes needed for flex setup */
+  display: flex;
+  align-items: center;
+}
+
+.brand-name {
+  font-size: 1.7rem; /* Larger font size for the brand */
+  font-weight: 800;
+  color: #FFC300; /* Yellow/Gold color for the brand name */
+}
+
+/* --- Navigation Links --- */
+.header-nav {
+  display: flex;
+  gap: 35px; /* Increased gap for better spacing */
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 5px 0;
+  transition: color 0.2s;
+  /* Add a subtle hover effect like a line or highlight */
+  position: relative;
+}
+
+.header-nav a:hover {
+  color: #ff9900; /* Yellow/Orange color on hover */
+}
+
+/* --- Right Section (User Icon) --- */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon-link {
+    /* Styles the user icon to be a distinct circle */
+    background: #FFC300;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: #111; /* Dark icon color inside the gold circle */
+    transition: transform 0.2s;
+}
+
+.user-icon-link:hover {
+    transform: scale(1.05);
+}
+
+.user-icon-link svg {
+    /* Ensures the SVG icon uses the parent's color */
+    stroke: currentColor;
+}

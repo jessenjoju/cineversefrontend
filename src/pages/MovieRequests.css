@@ -1,0 +1,104 @@
+.movie-requests-container {
+  padding: 30px;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.requests-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.request-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-info {
+  display: flex;
+  gap: 15px;
+}
+
+.movie-info img.poster {
+  width: 100px;
+  height: 140px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.status-section {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.status {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  color: orange;
+}
+
+.status.accepted {
+  color: green;
+}
+
+.status.rejected {
+  color: red;
+}
+
+.action-buttons {
+  margin-top: 10px;
+}
+
+.accept-btn,
+.reject-btn {
+  margin-left: 5px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.accept-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.reject-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.accept-btn:hover {
+  background-color: #45a049;
+}
+
+.reject-btn:hover {
+  background-color: #e53935;
+}
+
+.no-requests {
+  text-align: center;
+  font-size: 18px;
+  color: gray;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #444;
+}

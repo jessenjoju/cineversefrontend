@@ -1,0 +1,178 @@
+/* Container for the entire page, including background */
+.signup-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #1a1a2e; /* Fallback dark color */
+  background-image: url('backgroundadd.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+/* Semi-transparent overlay to ensure content is readable */
+.signup-page-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 1; /* Place it above the background image */
+}
+
+/* The central sign-up form card */
+.signup-form-card {
+  background-color: rgba(26, 26, 46, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid #4a4a6e;
+  z-index: 2; /* Ensure the form is on top of the overlay */
+}
+
+.form-title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.form-error-message {
+  color: #ff6b6b;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+.form-success-message {
+  color: #6bff91;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+.form-label {
+  color: #b3b3b3;
+  font-size: 0.9em;
+  margin-bottom: -10px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #4a4a6e;
+  border-radius: 5px;
+  background-color: #2e2e4a;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.form-input::placeholder {
+  color: #888;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.signup-btn:hover {
+  background-color: #0056b3;
+}
+
+.signup-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #b3b3b3;
+  font-size: 0.9em;
+  margin: 10px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #4a4a6e;
+}
+
+.divider:not(:empty)::before {
+  margin-right: 15px;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 15px;
+}
+
+.google-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-btn:hover {
+  background-color: #f1f1f1;
+}
+
+.form-links {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+.form-links p {
+  margin: 0;
+  color: #b3b3b3;
+}
+
+.form-links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-links a:hover {
+  text-decoration: underline;
+}
