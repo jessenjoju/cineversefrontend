@@ -18,24 +18,27 @@
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.8.0",
-    "react-scripts": "^5.0.1",
     "serve": "^14.2.3",
     "web-vitals": "^2.1.4"
   },
+
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "serve": "npx serve -s build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "npx serve -s dist",
+    "test": "echo \"No CRA test runner available\"",
     "lint": "eslint src --ext .js,.jsx"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
   },
+
   "browserslist": {
     "production": [
       ">0.2%",
@@ -48,6 +51,7 @@
       "last 1 safari version"
     ]
   },
+
   "devDependencies": {
     "@eslint/js": "^9.38.0",
     "autoprefixer": "^10.4.21",
@@ -60,7 +64,8 @@
     "tailwindcss": "^4.1.13",
     "vite": "^7.2.2"
   },
+
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   }
 }
